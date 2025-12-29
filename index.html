@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林火風險預警系統 - 轉接頁面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 延用您網頁的統一視覺風格 */
+        body { 
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif; 
+            background-color: #f0f7f6; 
+            padding: 40px 20px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            margin: 0;
+        }
+
+        .container { max-width: 600px; width: 100%; }
+
+        .card { 
+            background: #ffffff; 
+            border-radius: 12px; 
+            padding: 50px 30px; 
+            box-shadow: 0 4px 20px rgba(0, 77, 64, 0.08); 
+            border: 1px solid #d1e4e2;
+            text-align: center;
+        }
+
+        h1 { color: #004d40; font-size: 1.8rem; margin-bottom: 25px; }
+
+        .info-text {
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        /* 您的招牌立體膠囊按鈕 (溫類色碼 D96738) */
+        .btn-redirect { 
+            display: inline-block;
+            border-radius: 50px; 
+            transition: all 0.2s ease; 
+            border: 2px solid #2c3e50; 
+            background-color: #fff8f5; 
+            box-shadow: 0 5px 0px #D96738; 
+            padding: 16px 40px;
+            color: #1a252f; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 1.2rem;
+            position: relative;
+            top: 0;
+        }
+
+        .btn-redirect:hover { 
+            top: 3px;
+            box-shadow: 0 2px 0px #D96738;
+            filter: brightness(0.98);
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <i class="fas fa-fire-extinguisher" style="font-size: 3rem; color: #D96738; margin-bottom: 20px;"></i>
+            <h1>林火風險預警系統</h1>
+            
+            <p class="info-text">
+                因應林務局原始網站安全防護機制，<br>
+                本頁面將引導您前往官方即時地圖系統。<br>
+                請點擊下方按鈕以新分頁開啟。
+            </p>
+
+            <a href="https://ffwi.forest.gov.tw/" target="_blank" class="btn-redirect">
+                立即前往系統 <i class="fas fa-external-link-alt"></i>
+            </a>
+
+            <p class="footer-note">新竹縣氣候變遷調適專案小組 製作</p>
+        </div>
+    </div>
+</body>
+</html>
