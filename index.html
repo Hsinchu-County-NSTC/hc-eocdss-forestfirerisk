@@ -3,89 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林火風險預警系統 - 轉接頁面</title>
+    <title>林火風險評估系統 - 轉接頁面</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* 延用您網頁的統一視覺風格 */
+        /* 全域基礎設定 */
         body { 
             font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif; 
             background-color: #f0f7f6; 
-            padding: 40px 20px; 
+            margin: 0; 
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 80vh;
-            margin: 0;
+            min-height: 100vh;
         }
 
-        .container { max-width: 600px; width: 100%; }
-
-        .card { 
-            background: #ffffff; 
-            border-radius: 12px; 
-            padding: 50px 30px; 
-            box-shadow: 0 4px 20px rgba(0, 77, 64, 0.08); 
+        /* 主卡片容器 */
+        .main-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            width: 100%;
             border: 1px solid #d1e4e2;
+        }
+
+        /* 標題區 */
+        .title-section {
+            margin-bottom: 20px;
+            border-left: 8px solid #e67e22; /* 橘色主題色 */
+            padding-left: 15px;
+        }
+
+        h1 { 
+            color: #2c3e50; 
+            margin: 0; 
+            font-size: 1.8rem; 
+        }
+
+        /* 圖片展示區：這裡使用了相對定位，方便讓按鈕浮在圖上 */
+        .map-container {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #eee;
+            background-color: #000; /* 預載色 */
+        }
+
+        /* 您的截圖圖片 */
+        .screenshot {
+            width: 100%;
+            display: block;
+            opacity: 0.85; /* 稍微調暗，讓前景文字與按鈕更突出 */
+            transition: 0.3s;
+        }
+
+        /* 覆蓋在圖片上的說明區塊 */
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 精確居中 */
             text-align: center;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px); /* 毛玻璃效果，更有質感 */
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        h1 { color: #004d40; font-size: 1.8rem; margin-bottom: 25px; }
-
-        .info-text {
-            color: #7f8c8d;
-            line-height: 1.8;
-            margin-bottom: 35px;
-            font-size: 1.1rem;
+        .instruction {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        /* 您的招牌立體膠囊按鈕 (溫類色碼 D96738) */
-        .btn-redirect { 
+        /* 您招牌的立體膠囊按鈕（修改為橘色系） */
+        .btn-redirect {
             display: inline-block;
             border-radius: 50px; 
             transition: all 0.2s ease; 
             border: 2px solid #2c3e50; 
             background-color: #fff8f5; 
-            box-shadow: 0 5px 0px #D96738; 
-            padding: 16px 40px;
+            box-shadow: 0 5px 0px #e67e22; /* 橘色立體底座 */
+            padding: 18px 45px;
             color: #1a252f; 
             text-decoration: none; 
             font-weight: 800; 
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             position: relative;
             top: 0;
         }
 
         .btn-redirect:hover { 
-            top: 3px;
-            box-shadow: 0 2px 0px #D96738;
-            filter: brightness(0.98);
+            top: 3px;                  /* 按下效果 */
+            box-shadow: 0 2px 0px #e67e22;
+            background-color: #fff;
         }
 
         .footer-note {
-            margin-top: 30px;
-            font-size: 0.85em;
-            color: #bdc3c7;
+            text-align: right;
+            font-size: 0.8em;
+            color: #95a5a6;
+            margin-top: 15px;
+        }
+
+        /* 手機版優化 */
+        @media (max-width: 768px) {
+            .overlay-content { padding: 20px; }
+            .instruction { font-size: 1rem; }
+            .btn-redirect { padding: 12px 30px; font-size: 1.1rem; }
+            h1 { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <i class="fas fa-fire-extinguisher" style="font-size: 3rem; color: #D96738; margin-bottom: 20px;"></i>
-            <h1>林火風險預警系統</h1>
+
+<div class="main-card">
+    <div class="title-section">
+        <h1>新竹縣林火風險預警系統 (引導頁面)</h1>
+    </div>
+
+    <div class="map-container">
+        <img src="fire-map.png" alt="林火系統截圖" class="screenshot">
+        
+        <div class="overlay-content">
+            <div class="instruction">
+                <i class="fas fa-shield-alt" style="color: #e67e22;"></i><br>
+                因目標網站安全防護機制限制嵌入，<br>
+                請點擊下方按鈕，直接前往官方即時地圖。
+            </div>
             
-            <p class="info-text">
-                因應林務局原始網站安全防護機制，<br>
-                本頁面將引導您前往官方即時地圖系統。<br>
-                請點擊下方按鈕以新分頁開啟。
-            </p>
-
             <a href="https://ffwi.forest.gov.tw/" target="_blank" class="btn-redirect">
-                立即前往系統 <i class="fas fa-external-link-alt"></i>
+                進入原始系統 <i class="fas fa-external-link-alt"></i>
             </a>
-
-            <p class="footer-note">新竹縣氣候變遷調適專案小組 製作</p>
         </div>
     </div>
+
+    <div class="footer-note">
+        新竹縣氣候變遷調適策略專案小組 製作
+    </div>
+</div>
+
 </body>
 </html>
